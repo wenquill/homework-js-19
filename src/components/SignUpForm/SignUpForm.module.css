@@ -31,11 +31,11 @@
     flex: 1 1 auto;
 }
 
-small {
+.error {
     margin: 3px 0 0 3px;
     font-weight: 400;
     color: rgb(182, 29, 29);
-    display: block;
+    display: none;
 }
 
 .formInput {
@@ -49,6 +49,10 @@ small {
     border-bottom: 1px rgba(0, 0, 0, 0.733) solid;
 
     transition: 0.2s all ease;
+}
+
+.formInput:invalid[focused="true"] ~ .error{
+    display: block;
 }
 
 .formInput::placeholder {

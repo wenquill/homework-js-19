@@ -1,15 +1,18 @@
 .formContainer {
-    border: 1px solid rgb(59, 92, 94);
+    box-shadow: 0 0 3px 1px var(--dark-color);
     border-radius: 5px;
     max-width: 500px;
     margin: 30px auto;
     padding: 10px;
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(5px);
 }
+
 
 .title {
     text-align: center;
     font-size: 40px;
-    color:rgb(59, 92, 94);
+    color:var(--dark-color);
 }
 
 .form {
@@ -17,26 +20,12 @@
     padding: 20px 20px 30px 20px;
     font-family: Poppins, sans-serif;
     font-weight: 800;
-    color:rgb(59, 92, 94);
+    color:var(--dark-color);
 
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
-
-/* .label {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.labelName {
-    flex: 1 1 150px;
-
-    font-size: 16px;
-} */
 
 .formInputContainer {
     flex: 1 1 auto;
@@ -50,10 +39,10 @@ small {
 }
 
 .formInput {
-    /* flex: 1 1 auto; */
     width: 100%;
     font-size: 16px;
     padding: 10px 5px;
+    color: var(--dark-color);
     font-family: Poppins, sans-serif;
     background-color: transparent;
     border: none;
@@ -63,15 +52,15 @@ small {
 }
 
 .formInput::placeholder {
-    color: rgb(59, 92, 94);
+    color: #b4b4b4;
 }
 
 .formInput:focus {
-    color: #212529;
+    color: var(--dark-color);
     background-color: transparent;
     outline: 0;
     border-bottom: 1px transparent solid;
-    box-shadow: 0 3px 5px 2px rgb(59, 92, 94);
+    box-shadow: 0 0 5px 2px var(--dark-color);
   }
 
 .formInputCheckbox {
@@ -85,14 +74,14 @@ small {
     padding: 7px;
     background-color: transparent;
     border-radius:50%;
-    border: 1px solid black;
+    border: 1px solid var(--light-color);
     margin-bottom: -2px;
 
     position: relative;
 }
 .formInputCheckbox:checked {
-    background-color: rgb(59, 92, 94);
-    border: 1px solid rgb(59, 92, 94);
+    background-color: var(--light-color);
+    border: 1px solid var(--light-color);
 }
 .formInputCheckbox:checked:before {
     position: absolute;
@@ -115,11 +104,11 @@ small {
 .submitBtn {
     padding: 10px 5px;
 
-    background-color: rgb(59, 92, 94);
-    border: 2px solid rgb(59, 92, 94);
+    background-color: var(--dark-color);
+    border: 2px solid var(--dark-color);
     font-size:  inherit;
     font-family: inherit;
-    color: rgb(142, 163, 165);
+    color: var(--light-color);
     font-weight: inherit;
 
     transition: all 0.2s ease;
@@ -127,11 +116,29 @@ small {
 
 .submitBtn:hover {
     cursor: pointer;
-    background-color: rgb(142, 163, 165);
-    border: 2px solid rgb(142, 163, 165);
-    color: rgb(59, 92, 94);;
+    background-color: var(--light-color);
+    border: 2px solid var(--light-color);
+    color: var(--dark-color);
 }
 
-.invalid {
-    border-bottom: 1px solid rgb(182, 29, 29);
+.passwCont {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.eyes {
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    color: black;
+    top: 11px;
+    left: 93%;
+}
+
+.eyes svg {
+    width: 25px;
+    height: 25px;
+    color: #fff;
 }

@@ -29,6 +29,7 @@
 
 .formInputContainer {
     flex: 1 1 auto;
+    position: relative;
 }
 
 .error {
@@ -125,20 +126,13 @@
     color: var(--dark-color);
 }
 
-.passwCont {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    position: relative;
-}
-
 .eyes {
     background-color: transparent;
     border: none;
     position: absolute;
     color: black;
-    top: 11px;
-    left: 93%;
+    top: 16%;
+    left: 91%;
 }
 
 .eyes svg {

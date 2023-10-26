@@ -6,6 +6,7 @@ import SignUpItem from "./SignUpItem";
 function SignUpForm() {
 
   const [isChecked, setChecked] = useState(false)
+  const [isVisible, setVisible] = useState(false)
 
   const [values, setValues] = useState({
     name: "",
@@ -13,12 +14,7 @@ function SignUpForm() {
     passw: "",
     passw2: "",
     email: "",
-    visible: false,
   });
-
-  function checkHandler(e) {
-    setChecked(!isChecked)
-  }
 
   const inputs = [
     {
@@ -50,7 +46,7 @@ function SignUpForm() {
     {
       id: 4,
       name: "passw",
-      type: `${values.visible}` ? "text" : "password",
+      type: isVisible ? "text" : "password",
       placeholder: "Create your password",
       errorMessage:
         "password should contain 8-20 characters and include at least 1 letter, 1 number and 1 special character",
@@ -59,7 +55,7 @@ function SignUpForm() {
     {
       id: 5,
       name: "passw2",
-      type: `${values.visible}` ? "text" : "password",
+      type: isVisible ? "text" : "password",
       placeholder: "Confirm your password",
       errorMessage: "passwords don`t match",
       pattern: values.passw,
@@ -69,6 +65,14 @@ function SignUpForm() {
   const onChange = (e) => {
     setValues({ ...values, [e.target.name]: e.target.value });
   };
+
+  function checkHandler() {
+    setChecked(!isChecked)
+  }
+
+  function visibleHandler() {
+    setVisible(!isVisible)
+  }
 
   function submitHandler(e) {
     e.preventDefault();
@@ -85,6 +89,8 @@ function SignUpForm() {
             key={input.id}
             onChange={onChange}
             value={values[input.name]}
+            visibleHandler={visibleHandler}
+            isVisible={isVisible}
             {...input}
           />
         ))}

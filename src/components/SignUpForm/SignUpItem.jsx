@@ -1,14 +1,20 @@
 import React from "react";
+import { PiEyeLight, PiEyeClosedLight } from "react-icons/pi";
 import { useState } from "react";
 import styles from "./SignUpForm.module.css";
 
-// pattern, placeholder, type, name, value
-
 function SignUpItem(props) {
-  const { errorMessage, onChange, id, ...inputProps } = props;
+  const {
+    errorMessage,
+    visibleHandler,
+    isVisible,
+    onChange,
+    id,
+    ...inputProps
+  } = props;
   const [focused, setFocused] = useState(false);
 
-  const focusHandler = (e) => {
+  const focusHandler = () => {
     setFocused(true);
   };
 
@@ -21,8 +27,14 @@ function SignUpItem(props) {
         {...inputProps}
         onBlur={focusHandler}
         focused={focused.toString()}
+        onFocus={() => inputProps.name === "passw2" && setFocused(true)}
       />
       <small className={styles.error}>{errorMessage}</small>
+      {inputProps.name === "passw" && (
+        <div className={styles.eyes} onClick={visibleHandler}>
+            {isVisible ? <PiEyeLight /> : <PiEyeClosedLight/>}
+        </div>
+      )}
     </div>
   );
 }

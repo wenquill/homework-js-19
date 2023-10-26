@@ -1,0 +1,137 @@
+.formContainer {
+    border: 1px solid rgb(59, 92, 94);
+    border-radius: 5px;
+    max-width: 500px;
+    margin: 30px auto;
+    padding: 10px;
+}
+
+.title {
+    text-align: center;
+    font-size: 40px;
+    color:rgb(59, 92, 94);
+}
+
+.form {
+
+    padding: 20px 20px 30px 20px;
+    font-family: Poppins, sans-serif;
+    font-weight: 800;
+    color:rgb(59, 92, 94);
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* .label {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.labelName {
+    flex: 1 1 150px;
+
+    font-size: 16px;
+} */
+
+.formInputContainer {
+    flex: 1 1 auto;
+}
+
+small {
+    margin: 3px 0 0 3px;
+    font-weight: 400;
+    color: rgb(182, 29, 29);
+    display: block;
+}
+
+.formInput {
+    /* flex: 1 1 auto; */
+    width: 100%;
+    font-size: 16px;
+    padding: 10px 5px;
+    font-family: Poppins, sans-serif;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px rgba(0, 0, 0, 0.733) solid;
+
+    transition: 0.2s all ease;
+}
+
+.formInput::placeholder {
+    color: rgb(59, 92, 94);
+}
+
+.formInput:focus {
+    color: #212529;
+    background-color: transparent;
+    outline: 0;
+    border-bottom: 1px transparent solid;
+    box-shadow: 0 3px 5px 2px rgb(59, 92, 94);
+  }
+
+.formInputCheckbox {
+    margin-right: 10px;
+}
+
+.formInputCheckbox {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding: 7px;
+    background-color: transparent;
+    border-radius:50%;
+    border: 1px solid black;
+    margin-bottom: -2px;
+
+    position: relative;
+}
+.formInputCheckbox:checked {
+    background-color: rgb(59, 92, 94);
+    border: 1px solid rgb(59, 92, 94);
+}
+.formInputCheckbox:checked:before {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    content:"";
+    background-image: url(./../../img/check-solid.svg);
+    width: 10px;
+    height: 11px;
+}
+
+.formInputCheckboxLabel {
+    font-weight: 500;
+}
+
+.checkboxLink {
+    color: inherit;
+}
+
+.submitBtn {
+    padding: 10px 5px;
+
+    background-color: rgb(59, 92, 94);
+    border: 2px solid rgb(59, 92, 94);
+    font-size:  inherit;
+    font-family: inherit;
+    color: rgb(142, 163, 165);
+    font-weight: inherit;
+
+    transition: all 0.2s ease;
+}
+
+.submitBtn:hover {
+    cursor: pointer;
+    background-color: rgb(142, 163, 165);
+    border: 2px solid rgb(142, 163, 165);
+    color: rgb(59, 92, 94);;
+}
+
+.invalid {
+    border-bottom: 1px solid rgb(182, 29, 29);
+}
